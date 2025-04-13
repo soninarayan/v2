@@ -13,7 +13,7 @@
   }
 
   .sub-heading {
-    color: $primary-green;
+    color: var(--primary-color);
     font-weight: 500;
     font-size: 1.25rem;
     height: 2rem;
@@ -26,8 +26,8 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 1rem;
-    border: 3px solid $primary-green;
-    box-shadow: $card-shadow;
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--card-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {

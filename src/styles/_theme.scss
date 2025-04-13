@@ -1,34 +1,57 @@
-$primary-bg: #0f172a;
-$primary-green: #4ade80;
-$text-light: white;
-$text-muted: rgba(74, 222, 128, 0.8);
-$section-padding: 5rem 2rem;
-$card-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+@use "./variables" as *;
 
 @mixin section-wrapper {
-  background-color: $primary-bg;
-  color: $text-light;
+  background-color: var(--primary-bg);
+  color: var(--text-light);
   padding: $section-padding;
 }
 
 @mixin section-heading {
   font-size: 2rem;
   font-weight: 700;
-  color: $primary-green;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
+
 .bg-section {
-  background-color: #0f172a;
-  color: white;
-  padding: 5rem 2rem;
+  color: var(--text-light);
+  padding: $section-padding;
 }
 
 body {
-  background-color: $primary-bg;
-  color: $text-light;
+  background-color: var(--primary-bg);
+  color: var(--text-light);
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    filter: brightness(0.9);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(74, 222, 128, 0.5); // fallback for --primary-color
+  }
+
+  &:active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    filter: brightness(0.85);
+  }
+
+  &:disabled {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    opacity: 0.65;
+  }
 }

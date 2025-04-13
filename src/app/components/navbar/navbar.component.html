@@ -1,5 +1,17 @@
 <nav class="custom-navbar">
-  <div class="logo">Rohith</div>
+  <div class="logo">
+    Rohith
+    <label class="color-picker-wrapper">
+      🎨
+      <input
+        type="color"
+        [value]="currentColor"
+        (change)="updatePrimaryColor($event)"
+        class="color-picker"
+      />
+    </label>
+  </div>
+
   <input type="checkbox" id="menu-toggle" />
   <label for="menu-toggle" class="hamburger">&#9776;</label>
 

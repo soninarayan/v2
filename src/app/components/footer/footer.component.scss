@@ -16,7 +16,7 @@
 
   p {
     margin: 0;
-    color: $text-light;
+    color: var(--text-light);
   }
 
   .social-links {
@@ -25,11 +25,11 @@
 
     a {
       font-size: 1.5rem;
-      color: $text-light;
+      color: var(--text-light);
       transition: color 0.3s ease;
 
       &:hover {
-        color: $primary-green;
+        color: var(--primary-color);
       }
     }
   }

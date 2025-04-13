@@ -1,12 +1,30 @@
 @use "../../../styles/theme" as *;
 
+.color-picker-wrapper {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+
+  .color-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
 .custom-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $primary-bg;
+  background-color: var(--primary-bg);
   padding: 1rem 2rem;
-  color: $text-light;
+  color: var(--text-light);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -14,7 +32,7 @@
   .logo {
     font-weight: 700;
     font-size: 1.5rem;
-    color: $primary-green;
+    color: var(--primary-color);
   }
 
   #menu-toggle {
@@ -25,7 +43,7 @@
     display: none;
     font-size: 2rem;
     cursor: pointer;
-    color: $text-light;
+    color: var(--text-light);
   }
 
   .nav-links {
@@ -36,7 +54,7 @@
 
     li a {
       text-decoration: none;
-      color: $text-light;
+      color: var(--text-light);
       font-weight: 500;
       position: relative;
       padding-bottom: 4px;
@@ -49,7 +67,7 @@
         bottom: 0;
         height: 2px;
         width: 0;
-        background-color: $primary-green;
+        background-color: var(--primary-color);
         transition: width 0.3s ease-in-out;
       }
 
@@ -58,12 +76,11 @@
       }
 
       &:hover {
-        color: $primary-green;
+        color: var(--primary-color);
       }
     }
   }
 
-  // Responsive mobile navbar
   @media (max-width: 768px) {
     .hamburger {
       display: block;
@@ -75,7 +92,7 @@
       top: 100%;
       left: 0;
       width: 100%;
-      background-color: $primary-bg;
+      background-color: var(--primary-bg);
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;

@@ -6,9 +6,11 @@
   .custom-projects {
     height: 50vh;
   }
+
   .mb-10rem {
     margin-bottom: 10rem;
   }
+
   .image-stack {
     padding: 1rem;
     position: relative;
@@ -33,7 +35,7 @@
         opacity: 1;
         transform: scale(1);
         z-index: 3;
-        box-shadow: 0 0 15px $primary-green;
+        box-shadow: 0 0 15px var(--primary-color);
         pointer-events: auto;
       }
 
@@ -50,6 +52,7 @@
         z-index: 2;
         pointer-events: auto;
       }
+
       @media (max-width: 767.98px) {
         margin-bottom: 10rem;
       }
@@ -58,12 +61,13 @@
 
   .project-content {
     max-width: 500px;
+
     @media (max-width: 767.98px) {
       margin-top: 10rem;
     }
 
     .project-title {
-      color: $primary-green;
+      color: var(--primary-color);
       font-size: 1.8rem;
       font-weight: 700;
     }
@@ -71,7 +75,7 @@
     .project-description {
       font-size: 1rem;
       margin: 1rem 0;
-      color: $text-light;
+      color: var(--text-light);
     }
 
     .tech-stack {
@@ -80,7 +84,7 @@
       gap: 0.5rem;
 
       .badge {
-        background-color: $primary-green;
+        background-color: var(--primary-color);
         color: #0f172a;
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
