@@ -1,0 +1,50 @@
+@use "../../../styles/theme" as *;
+
+.hero-section {
+  @include section-wrapper;
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .sub-heading {
+    color: $primary-green;
+    font-weight: 500;
+    font-size: 1.25rem;
+    height: 2rem;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 3px solid $primary-green;
+    box-shadow: $card-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  a.btn {
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

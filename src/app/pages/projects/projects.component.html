@@ -1,0 +1,46 @@
+<section class="projects-section bg-section" id="projects">
+  <h2 class="text-center mb-10rem">Projects</h2>
+  <div class="container custom-projects">
+    <div class="row align-items-center">
+      <!-- Left Column: Image Stack -->
+      <div class="col-md-6 d-flex justify-content-center mb-4">
+        <div class="image-stack m-4">
+          <img
+            *ngFor="let project of projects; let i = index"
+            [src]="project.image"
+            [alt]="project.name"
+            [class]="getClass(i)"
+            (click)="selectProject(i)"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column: Project Info -->
+      <div
+        class="col-md-6 project-content text-md-start text-center mt-4 mt-md-0"
+      >
+        <h3 class="project-title">{{ projects[selectedProjectIndex].name }}</h3>
+        <p class="project-description">
+          {{ projects[selectedProjectIndex].description }}
+        </p>
+
+        <div class="tech-stack mt-2">
+          <span
+            *ngFor="let tech of projects[selectedProjectIndex].techStack"
+            class="badge"
+          >
+            {{ tech }}
+          </span>
+        </div>
+
+        <a
+          [href]="projects[selectedProjectIndex].github"
+          target="_blank"
+          class="btn btn-outline-light mt-3"
+        >
+          <i class="bi bi-github me-2"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

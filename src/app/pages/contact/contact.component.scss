@@ -1,0 +1,58 @@
+@use "../../../styles/theme" as *;
+
+.contact-section {
+  @include section-wrapper;
+
+  h2 {
+    @include section-heading;
+  }
+
+  .contact-desc {
+    color: $text-light;
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    input,
+    textarea {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      border-radius: 0.5rem;
+      color: $text-light;
+      padding: 0.75rem 1rem;
+
+      &::placeholder {
+        color: $text-muted;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.1rem $primary-green;
+      }
+    }
+
+    button {
+      font-weight: 500;
+      padding: 0.6rem 2rem;
+      border-radius: 999px;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+
+    a {
+      color: $text-light;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-green;
+      }
+    }
+  }
+}

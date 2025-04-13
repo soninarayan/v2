@@ -1,0 +1,102 @@
+@use "../../../styles/theme" as *;
+
+.about-section {
+  @include section-wrapper;
+  text-align: center;
+
+  h2 {
+    @include section-heading;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+    color: $text-light;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .badge {
+      font-size: 0.85rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      margin: 0.15rem !important;
+    }
+  }
+
+  .mini-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid $primary-green;
+  }
+}
+
+.resume-section {
+  @include section-wrapper;
+
+  h2 {
+    @include section-heading;
+    text-align: center;
+  }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // two columns for md+
+    }
+  }
+
+  .resume-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: $card-shadow;
+    color: $text-light;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      color: $primary-green;
+      margin-bottom: 0.8rem;
+    }
+
+    h5 {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline {
+      font-size: 0.85rem;
+      color: $primary-green;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+      margin-bottom: 0;
+      li {
+        margin-bottom: 0.4rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}

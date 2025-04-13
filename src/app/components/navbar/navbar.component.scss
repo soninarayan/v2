@@ -1,0 +1,94 @@
+@use "../../../styles/theme" as *;
+
+.custom-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-bg;
+  padding: 1rem 2rem;
+  color: $text-light;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $primary-green;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $text-light;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+
+    li a {
+      text-decoration: none;
+      color: $text-light;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background-color: $primary-green;
+        transition: width 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:hover {
+        color: $primary-green;
+      }
+    }
+  }
+
+  // Responsive mobile navbar
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $primary-bg;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+      max-height: 300px;
+      padding: 1rem 0;
+    }
+
+    .nav-links li {
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+$primary-bg: #0f172a;
+$primary-green: #4ade80;
+$text-light: white;
+$text-muted: rgba(74, 222, 128, 0.8);
+$section-padding: 5rem 2rem;
+$card-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+
+@mixin section-wrapper {
+  background-color: $primary-bg;
+  color: $text-light;
+  padding: $section-padding;
+}
+
+@mixin section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $primary-green;
+  margin-bottom: 1rem;
+}
+.bg-section {
+  background-color: #0f172a;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+body {
+  background-color: $primary-bg;
+  color: $text-light;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

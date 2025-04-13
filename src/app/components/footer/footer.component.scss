@@ -1,0 +1,36 @@
+@use "../../../styles/theme" as *;
+
+.footer {
+  @include section-wrapper;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: $text-light;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-size: 1.5rem;
+      color: $text-light;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-green;
+      }
+    }
+  }
+}
