@@ -12,27 +12,28 @@ export class ProjectsComponent {
 
   projects = [
     {
-      name: 'AI Inventory Manager',
-      image: 'projects/project1.jpg',
-      description: 'AI-powered tool for real-time inventory tracking.',
-      github: 'https://github.com/rohithreddydepa/inventory-ai',
-      techStack: ['Angular', 'Python', 'MongoDB'],
-    },
-    {
-      name: 'Resume Portfolio Builder',
-      image: 'projects/project2.jpg',
+      name: 'Portfolio Website',
+      image: 'projects/project1.png',
       description:
-        'Generates custom portfolios using resume data and templates.',
+        'A responsive and modern portfolio website to showcase my work, skills, and resume. Built using Angular, styled with Bootstrap, and includes interactive animations.',
       github: 'https://github.com/rohithreddydepa/portfolio-builder',
-      techStack: ['React', 'Node.js', 'TailwindCSS'],
+      techStack: ['Angular', 'Bootstrap', 'TypeScript', 'SCSS'],
     },
     {
-      name: 'Attendance Tracker',
-      image: 'projects/project3.jpg',
+      name: 'Traffic Asset Defect Detection',
+      image: 'projects/project2.png',
       description:
-        'Punch-in system with charts, time logs, and role-based auth.',
-      github: 'https://github.com/rohithreddydepa/attendance-tracker',
-      techStack: ['Angular', 'Node.js', 'MongoDB'],
+        'An AI-based tool that identifies defects in traffic assets such as road signs, traffic lights, and pavement markings using deep learning and computer vision.',
+      github: 'https://github.com/rohithreddydepa/AssestManagement',
+      techStack: ['YOLOv8', 'Python', 'OpenCV', 'Deep Learning'],
+    },
+    {
+      name: 'School Management System',
+      image: 'projects/project3.png',
+      description:
+        'A full-stack school management platform to handle student records, attendance, grades, and user roles. Features real-time data sync, secure APIs, and cloud deployment.',
+      github: 'https://github.com/rohithreddydepa/schoolManagmentSystem',
+      techStack: ['React', 'Spring Boot', 'AWS', 'PostgreSQL', 'REST API'],
     },
   ];
 
