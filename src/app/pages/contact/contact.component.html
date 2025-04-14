@@ -6,38 +6,24 @@
       discussing new opportunities or collaborations.
     </p>
 
-    <!-- Bootstrap Alerts -->
-    <div
-      *ngIf="successMessage"
-      class="alert alert-success alert-dismissible fade show text-center"
-      role="alert"
-    >
+    <div *ngIf="successMessage" class="custom-alert alert-success" role="alert">
       {{ successMessage }}
       <button
         type="button"
         class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
         (click)="successMessage = null"
       ></button>
     </div>
 
-    <div
-      *ngIf="errorMessage"
-      class="alert alert-danger alert-dismissible fade show text-center"
-      role="alert"
-    >
+    <div *ngIf="errorMessage" class="custom-alert alert-danger" role="alert">
       {{ errorMessage }}
       <button
         type="button"
         class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
         (click)="errorMessage = null"
       ></button>
     </div>
 
-    <!-- Contact Form -->
     <form
       class="contact-form mt-4"
       (submit)="sendEmail($event)"

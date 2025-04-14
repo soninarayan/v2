@@ -4,7 +4,7 @@
     <div class="row align-items-center">
       <!-- Left Column: Image Stack -->
       <div class="col-md-6 d-flex justify-content-center mb-4">
-        <div class="image-stack m-4">
+        <div class="image-stack m-4" (wheel)="onScroll($event)">
           <img
             *ngFor="let project of projects; let i = index"
             [src]="project.image"

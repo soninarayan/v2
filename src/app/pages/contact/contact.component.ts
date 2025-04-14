@@ -4,9 +4,9 @@ import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
+  imports: [NgIf],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  imports: [NgIf],
 })
 export class ContactComponent {
   emailjsConfig = {
@@ -34,7 +34,6 @@ export class ContactComponent {
       message: form['message'].value,
     };
 
-    // 1. Auto-reply to user
     emailjs
       .send(
         this.emailjsConfig.serviceId,
@@ -42,15 +41,14 @@ export class ContactComponent {
         formData,
         this.emailjsConfig.publicKey
       )
-      .then(() => {
-        // 2. Send to yourself
-        return emailjs.send(
+      .then(() =>
+        emailjs.send(
           this.emailjsConfig.serviceId,
           this.emailjsConfig.mailMe,
           formData,
           this.emailjsConfig.publicKey
-        );
-      })
+        )
+      )
       .then(() => {
         this.successMessage = '✅ Message sent successfully!';
         this.isSubmitting = false;

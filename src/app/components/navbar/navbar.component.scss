@@ -78,6 +78,15 @@
       &:hover {
         color: var(--primary-color);
       }
+
+      &.active {
+        color: var(--primary-color);
+
+        &::after {
+          width: 100%;
+          background-color: var(--primary-color);
+        }
+      }
     }
   }
 

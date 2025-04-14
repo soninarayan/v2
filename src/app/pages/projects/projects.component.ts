@@ -47,4 +47,18 @@ export class ProjectsComponent {
   selectProject(index: number) {
     this.selectedProjectIndex = index;
   }
+  onScroll(event: WheelEvent) {
+    event.preventDefault(); // prevent the page from scrolling
+
+    if (event.deltaY > 0) {
+      // scroll down
+      this.selectedProjectIndex =
+        (this.selectedProjectIndex + 1) % this.projects.length;
+    } else {
+      // scroll up
+      this.selectedProjectIndex =
+        (this.selectedProjectIndex - 1 + this.projects.length) %
+        this.projects.length;
+    }
+  }
 }

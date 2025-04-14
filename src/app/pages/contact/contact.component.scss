@@ -56,3 +56,38 @@
     }
   }
 }
+
+.custom-alert {
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 10;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+
+  &.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+  }
+
+  &.alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+  }
+
+  .btn-close {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: inherit;
+    margin-left: 1rem;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
