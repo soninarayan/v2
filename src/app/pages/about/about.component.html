@@ -17,18 +17,31 @@
       constantly learning new tech.
     </p>
 
-    <h5 class="mt-4">Tech Stack</h5>
-    <div class="skills mt-3">
-      <span class="badge bg-success">Angular</span>
-      <span class="badge bg-info text-dark">React</span>
-      <span class="badge bg-dark">Node.js</span>
-      <span class="badge bg-primary">Python</span>
-      <span class="badge bg-warning text-dark">FastAPI</span>
-      <span class="badge bg-danger">Docker</span>
-      <span class="badge bg-secondary">MongoDB</span>
-      <span class="badge bg-light text-dark">AWS</span>
-      <span class="badge bg-success">MySQL</span>
-    </div>
+    <section class="tech-section container py-5" id="tech">
+      <h2 class="text-center mb-5">Tech Stack</h2>
+
+      <div class="row g-4">
+        <!-- Each tech category -->
+        <div class="col-md-4" *ngFor="let group of techGroups">
+          <div class="p-4 rounded text-center">
+            <h5 class="mb-3 text-uppercase fw-bold">
+              {{ group.title }}
+            </h5>
+            <div
+              class="d-flex flex-wrap justify-content-center gap-3 shadow-sm"
+            >
+              <span
+                *ngFor="let tech of group.items"
+                [attr.title]="tech.label"
+                data-bs-toggle="tooltip"
+              >
+                <i [class]="tech.icon"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </section>
 
