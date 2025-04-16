@@ -1,59 +1,98 @@
-# Portfolio
+# 🚀 Angular Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+A modern, responsive portfolio website built using Angular. This project showcases your work, skills, and experience in a visually engaging format, and is hosted using GitHub Pages.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🧑‍💻 Features
 
-```bash
-ng serve
-```
+- Responsive and clean UI built with Angular
+- Smooth animations and modern SCSS styling
+- Project showcase, resume download, and contact form
+- Easy deployment to GitHub Pages
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📦 Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Make sure you have the following installed:
 
-```bash
-ng generate component component-name
-```
+- [Node.js](https://nodejs.org/) (v14+ recommended)
+- [Angular CLI](https://angular.io/cli)
+- Git
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🚀 Getting Started
 
-## Building
-
-To build the project run:
+### 1. Clone the Repository
 
 ```bash
-ng build
+git clone https://github.com/rohithreddydepa/latest-portfolio.git
+cd latest-portfolio
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 2. Install Dependencies
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### 3. Start the Development Server
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The app will be available at: [http://localhost:4200](http://localhost:4200)
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🚢 Deployment
+
+To build and deploy the project to GitHub Pages, run:
+
+```bash
+bash deploy.sh
+```
+
+This script will:
+
+- Build the Angular project using `ng build --base-href "/<repo-name>/"`
+- Push the built files in the `dist/` directory to the `gh-pages` branch
+- Publish the site to: `https://your-username.github.io/<repo-name>/`
+
+Make sure to replace `<repo-name>` with your actual GitHub repository name.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── app/                # Angular components and modules
+├── assets/             # Static assets like images and fonts
+├── environments/       # Environment configuration
+└── styles.scss         # Global SCSS styles
+```
+
+---
+
+## 💡 Customization
+
+- Edit content in Angular components (e.g., `about`, `projects`, `contact`)
+- Update styles in `styles.scss` and component-specific styles
+- Replace image assets in `src/assets`
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to the open-source community for Angular, SCSS, and GitHub Pages.
