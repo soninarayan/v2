@@ -16,7 +16,7 @@ export class ProjectsComponent {
       image: 'projects/project1.png',
       description:
         'A responsive and modern portfolio website to showcase my work, skills, and resume. Built using Angular, styled with Bootstrap, and includes interactive animations.',
-      github: 'https://github.com/rohithreddydepa/portfolio-builder',
+      github: 'https://github.com/rohithreddydepa/latest-portfolio',
       techStack: ['Angular', 'Bootstrap', 'TypeScript', 'SCSS'],
     },
     {

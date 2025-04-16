@@ -5,30 +5,16 @@
   <div #terminalTrigger></div>
 
   <ng-container *ngIf="showTerminal">
-    <div class="fade-in">
+    <div data-aos="fade-up">
       <app-terminal></app-terminal>
     </div>
   </ng-container>
 
   <div class="container text-center">
-    <!-- <p class="about-text">
-      I'm <strong>Rohith Reddy Depa</strong>, a Full Stack Developer and Cloud
-      Engineer based in Houston, TX. I hold a Master’s in Computer Science from
-      the University of Houston. I enjoy building scalable, secure, and
-      performant web apps with a strong focus on clean code and practical
-      solutions.
-    </p>
-
-    <p class="about-text">
-      I work with modern frameworks and tools like Angular, React, FastAPI, AWS,
-      and Docker. I'm passionate about solving real-world problems and
-      constantly learning new tech.
-    </p> -->
-
     <section class="tech-section container py-5" id="tech">
       <h2 class="text-center mb-5">Tech Stack</h2>
 
-      <div class="row g-4">
+      <div class="row g-4" data-aos="fade-up">
         <!-- Each tech category -->
         <div class="col-md-4" *ngFor="let group of techGroups">
           <div class="p-4 rounded text-center">
