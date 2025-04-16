@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AfterViewInit } from '@angular/core';
+import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { TerminalComponent } from './terminal/terminal.component';
 
@@ -12,14 +12,33 @@ import { TerminalComponent } from './terminal/terminal.component';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements AfterViewInit {
+  @ViewChild('terminalTrigger', { static: false }) terminalTrigger!: ElementRef;
+  showTerminal: boolean = false;
   ngAfterViewInit(): void {
+    // Tooltip setup
     const tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]')
     );
     tooltipTriggerList.map(
       (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
     );
+
+    // IntersectionObserver for terminal
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.showTerminal = true;
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (this.terminalTrigger?.nativeElement) {
+      observer.observe(this.terminalTrigger.nativeElement);
+    }
   }
+
   techGroups = [
     {
       title: 'Programming',

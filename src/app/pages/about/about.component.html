@@ -1,7 +1,15 @@
 <!-- About Me Section -->
 <section class="resume-section bg-section" id="about">
   <h2 class="mb-4">About Me</h2>
-  <app-terminal></app-terminal>
+
+  <div #terminalTrigger></div>
+
+  <ng-container *ngIf="showTerminal">
+    <div class="fade-in">
+      <app-terminal></app-terminal>
+    </div>
+  </ng-container>
+
   <div class="container text-center">
     <!-- <p class="about-text">
       I'm <strong>Rohith Reddy Depa</strong>, a Full Stack Developer and Cloud
