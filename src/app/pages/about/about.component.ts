@@ -88,6 +88,7 @@ export class AboutComponent implements AfterViewInit {
         { label: 'Oracle', icon: 'devicon-oracle-original tech-icon ' },
         { label: 'SQLite', icon: 'devicon-sqlite-plain tech-icon ' },
         { label: 'Firebase', icon: 'devicon-firebase-plain tech-icon ' },
+        { label: 'PostgreSQL', icon: 'devicon-postgresql-plain tech-icon ' },
       ],
     },
     {
@@ -99,6 +100,7 @@ export class AboutComponent implements AfterViewInit {
         { label: 'Postman', icon: 'devicon-postman-plain tech-icon ' },
         { label: 'Kafka', icon: 'devicon-apachekafka-original tech-icon ' },
         { label: 'VS Code', icon: 'devicon-vscode-plain tech-icon ' },
+        { label: 'IntelliJ', icon: 'devicon-intellij-plain tech-icon ' },
       ],
     },
   ];
