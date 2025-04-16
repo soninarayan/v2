@@ -9,7 +9,7 @@ import { NgFor } from '@angular/common';
 })
 export class ProjectsComponent {
   selectedProjectIndex = 1;
-
+  private scrollCooldown = false;
   projects = [
     {
       name: 'Portfolio Website',
@@ -48,17 +48,22 @@ export class ProjectsComponent {
     this.selectedProjectIndex = index;
   }
   onScroll(event: WheelEvent) {
-    event.preventDefault(); // prevent the page from scrolling
+    event.preventDefault();
+    if (this.scrollCooldown) return;
+    this.scrollCooldown = true;
 
     if (event.deltaY > 0) {
-      // scroll down
       this.selectedProjectIndex =
         (this.selectedProjectIndex + 1) % this.projects.length;
     } else {
-      // scroll up
       this.selectedProjectIndex =
         (this.selectedProjectIndex - 1 + this.projects.length) %
         this.projects.length;
     }
+
+    // set cooldown duration (adjust for smoother/faster)
+    setTimeout(() => {
+      this.scrollCooldown = false;
+    }, 400); // 400ms delay between scroll switches
   }
 }
