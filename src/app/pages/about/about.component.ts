@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AfterViewInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
+import { TerminalComponent } from './terminal/terminal.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TerminalComponent, TerminalComponent],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })

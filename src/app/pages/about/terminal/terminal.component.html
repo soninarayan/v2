@@ -1,0 +1,32 @@
+<div class="terminal-wrapper">
+  <div class="terminal" #terminalRef>
+    <div *ngFor="let line of history">
+      <div class="prompt-line">
+        <span class="prompt">➜ ~</span>
+        <span class="command">{{ line.command }}</span>
+      </div>
+      <div class="output" *ngIf="line.output">{{ line.output }}</div>
+    </div>
+
+    <div class="prompt-line" *ngIf="allowInput">
+      <span class="prompt">➜ ~</span>
+      <input
+        [(ngModel)]="currentCommand"
+        (keydown.enter)="handleCommand()"
+        class="input-command"
+        autocomplete="off"
+        spellcheck="false"
+        autofocus
+      />
+    </div>
+  </div>
+
+  <button
+    class="scroll-button"
+    *ngIf="!userAtBottom"
+    (click)="scrollToBottom()"
+    aria-label="Scroll to bottom"
+  >
+    ↓
+  </button>
+</div>
