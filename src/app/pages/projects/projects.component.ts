@@ -12,14 +12,6 @@ export class ProjectsComponent {
   private scrollCooldown = false;
   projects = [
     {
-      name: 'Portfolio Website',
-      image: 'projects/project1.png',
-      description:
-        'A responsive and modern portfolio website to showcase my work, skills, and resume. Built using Angular, styled with Bootstrap, and includes interactive animations.',
-      github: 'https://github.com/rohithreddydepa/latest-portfolio',
-      techStack: ['Angular', 'Bootstrap', 'TypeScript', 'SCSS'],
-    },
-    {
       name: 'Traffic Asset Defect Detection',
       image: 'projects/project2.png',
       description:
@@ -34,6 +26,21 @@ export class ProjectsComponent {
         'A full-stack school management platform to handle student records, attendance, grades, and user roles. Features real-time data sync, secure APIs, and cloud deployment.',
       github: 'https://github.com/rohithreddydepa/schoolManagmentSystem',
       techStack: ['React', 'Spring Boot', 'AWS', 'PostgreSQL', 'REST API'],
+    },
+    {
+      name: 'Spline Interpolation Based Audio and Video Enhancement',
+      image: 'projects/Spline_interpolation.png',
+      description:
+        'A Python-based multimedia enhancement system using cubic spline interpolation to reconstruct and improve degraded audio and video signals. Features modular pipelines, evaluation with SSIM, PSNR, MSE, and dynamic range analysis.',
+      github: 'https://github.com/rohithreddydepa/SplineInterpolation',
+      techStack: [
+        'Python',
+        'OpenCV',
+        'Librosa',
+        'Matplotlib',
+        'SciPy',
+        'Docker',
+      ],
     },
   ];
 
