@@ -12,26 +12,40 @@ export class ProjectsComponent {
   private scrollCooldown = false;
   projects = [
     {
-      name: 'Traffic Asset Defect Detection',
-      image: 'projects/project2.png',
+      name: 'Traffic Asset Defect Detection (TxDOT)',
+      image: 'projects/AssestManagment.png',
       description:
-        'An AI-based tool that identifies defects in traffic assets such as road signs, traffic lights, and pavement markings using deep learning and computer vision.',
+        'AI-powered system for Texas DOT that detects defects in road signs, lights, and pavement using YOLOv5 and OpenCV. Automated reporting reduced inspection time by 40%.',
       github: 'https://github.com/rohithreddydepa/AssestManagement',
-      techStack: ['YOLOv8', 'Python', 'OpenCV', 'Deep Learning'],
+      techStack: [
+        'YOLOv5',
+        'Python',
+        'OpenCV',
+        'Computer Vision',
+        'Automation',
+      ],
     },
     {
       name: 'School Management System',
-      image: 'projects/project3.png',
+      image: 'projects/SMS.png',
       description:
-        'A full-stack school management platform to handle student records, attendance, grades, and user roles. Features real-time data sync, secure APIs, and cloud deployment.',
+        'Full-stack education platform with secure login, admin/student dashboards, attendance tracking, and payment integration. Deployed on AWS with containerization.',
       github: 'https://github.com/rohithreddydepa/schoolManagmentSystem',
-      techStack: ['React', 'Spring Boot', 'AWS', 'PostgreSQL', 'REST API'],
+      techStack: ['React', 'Spring Boot', 'PostgreSQL', 'JWT', 'AWS', 'Docker'],
     },
     {
-      name: 'Spline Interpolation Based Audio and Video Enhancement',
+      name: 'ISP Messaging System',
+      image: 'projects/ISPMessage.png',
+      description:
+        'Scalable microservices-based support system using Kafka for messaging and OpenAI API for query resolution. Reduced manual support by 40%.',
+      github: 'https://github.com/rohithreddydepa/ISPMessagingSystem',
+      techStack: ['Kafka', 'FastAPI', 'OpenAI API', 'PostgreSQL', 'Docker'],
+    },
+    {
+      name: 'Spline Interpolation: Audio & Video Enhancement',
       image: 'projects/Spline_interpolation.png',
       description:
-        'A Python-based multimedia enhancement system using cubic spline interpolation to reconstruct and improve degraded audio and video signals. Features modular pipelines, evaluation with SSIM, PSNR, MSE, and dynamic range analysis.',
+        'Python-based enhancement tool using cubic spline interpolation to restore degraded audio/video. Integrated SSIM, PSNR, MSE for quality evaluation.',
       github: 'https://github.com/rohithreddydepa/SplineInterpolation',
       techStack: [
         'Python',

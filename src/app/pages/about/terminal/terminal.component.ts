@@ -26,17 +26,17 @@ export class TerminalComponent implements OnInit, AfterViewInit {
   predefinedCommands = [
     {
       command: 'whoami',
-      output: 'Rohith Reddy Depa, Full Stack & Cloud Engineer | Houston, TX',
+      output: 'Rohith Reddy Depa, Full Stack & Cloud Engineer',
     },
     {
       command: 'cat skills.txt',
       output:
-        'Java, Python, Spring Boot, Angular, AWS, Docker, Redis, SQL, GraphQL, FastAPI',
+        'Java, Python, Spring Boot, Angular, React, AWS, Docker, Redis, GraphQL, Kafka, PostgreSQL',
     },
     {
       command: 'ls projects/',
       output:
-        'e-commerce, secure-share, aisp-chatbot, portfolio-site, school-management',
+        'school-management, isp-messaging-system, txdot-defect-detection, portfolio-site',
     },
     { command: 'pwd', output: '/home/rohith/portfolio' },
     {
@@ -93,7 +93,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
 
     switch (cmd) {
       case 'whoami':
-        output = 'Rohith Reddy Depa, Full Stack & Cloud Engineer | Houston, TX';
+        output = 'Rohith Reddy Depa, Full Stack & Cloud Engineer';
         break;
 
       case 'motivation':
@@ -107,7 +107,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
 
       case 'cat skills.txt':
         output =
-          'Java, Python, Spring Boot, Angular, AWS, Docker, Redis, SQL, GraphQL, FastAPI';
+          'Java, Python, Spring Boot, Angular, React, AWS, Docker, Redis, GraphQL, Kafka, PostgreSQL';
         break;
 
       case 'cat frontend.txt':
@@ -120,69 +120,57 @@ export class TerminalComponent implements OnInit, AfterViewInit {
 
       case 'cat experience/university-of-houston.txt':
         output =
-          'Research Assistant | YOLOv8 Sign Detection | GIS Coverage +40% | Cascade CMS SEO boost';
+          'Built Angular + Spring Boot apps | Redis Caching | PostgreSQL + AWS RDS | CloudWatch monitoring';
         break;
 
       case 'cat experience/opentext.txt':
         output =
-          'Angular + Spring Boot App | 50K+ requests/day | Redis, CI/CD, AWS Glue';
-        break;
-
-      case 'cat experience/internship.txt':
-        output =
-          'Migrated PHP to .NET Core | Built 12 APIs | Supported 1K+ concurrent users';
+          'React + Node.js | Redis, Redux, SSR | AWS Glue ETL | Jenkins + Docker + Kubernetes';
         break;
 
       case 'cat experience/*.txt':
         output =
-          'University of Houston: YOLOv8 Detection, Cascade SEO, GIS Automation\n' +
-          'OpenText: Angular + Spring Boot, Redis Caching, AWS Glue, CI/CD\n' +
-          'Internship: .NET Core APIs, PHP Migration';
-        break;
-
-      case 'cat projects/*.txt':
-        output =
-          'e-commerce: Spring Boot + GraphQL, Stripe, 99.95% uptime\n' +
-          'secure-share: P2P AES-256, MinIO, RabbitMQ\n' +
-          'aisp-chatbot: DeepSeek NLP, Elasticsearch + Kibana\n' +
-          'portfolio-site: Angular site w/ Mac-style terminal\n' +
-          'school-management: React + Spring Boot + PostgreSQL';
-        break;
-
-      case 'ls projects/':
-        output =
-          'e-commerce, secure-share, aisp-chatbot, portfolio-site, school-management';
-        break;
-
-      case 'cat projects/e-commerce.txt':
-        output =
-          'Spring Boot + GraphQL microservices | 500+ orders/day | Stripe + JWT | 99.95% uptime';
-        break;
-
-      case 'cat projects/secure-share.txt':
-        output =
-          'P2P AES-256 File Transfer | MinIO Storage | RabbitMQ | 98% faster than SFTP';
-        break;
-
-      case 'cat projects/aisp-chatbot.txt':
-        output =
-          'DeepSeek Chatbot | 92% resolution | Elasticsearch + Kibana dashboard';
-        break;
-
-      case 'cat projects/portfolio-site.txt':
-        output =
-          'Modern Angular Portfolio | Mac-style terminal | Responsive layout | GitHub + LinkedIn integration';
+          'University of Houston: Angular + Spring Boot, AWS, Redis, PostgreSQL\n' +
+          'OpenText: React + Node.js, Redis Caching, AWS Glue, Jenkins';
         break;
 
       case 'cat projects/school-management.txt':
         output =
-          'School Management System | React + Spring Boot + PostgreSQL | Admin & Student Dashboards';
+          'React + Spring Boot | MySQL | JWT/OAuth2 | Razorpay | Role-based Access | Dockerized on AWS';
+        break;
+
+      case 'cat projects/isp-messaging-system.txt':
+        output =
+          'Apache Kafka + PostgreSQL | FastAPI + OpenAI API | Dockerized Microservices | 40% ticket reduction';
+        break;
+
+      case 'cat projects/txdot-defect-detection.txt':
+        output =
+          'YOLOv5 + OpenCV | Python automation for TxDOT | Detection accuracy improved by 25%';
+        break;
+
+      case 'cat projects/portfolio-site.txt':
+        output =
+          'Angular Portfolio with Terminal UI | GitHub & LinkedIn integrations | Fully responsive';
+        break;
+
+      case 'cat projects/*.txt':
+        output =
+          'school-management: React + Spring Boot + JWT, Razorpay, Docker\n' +
+          'isp-messaging-system: Kafka + OpenAI API + PostgreSQL\n' +
+          'txdot-defect-detection: YOLOv5 + OpenCV + Python scripting\n' +
+          'portfolio-site: Angular Terminal UI + Responsive Design';
+        break;
+
+      case 'ls projects/':
+        output =
+          'school-management, isp-messaging-system, txdot-defect-detection, portfolio-site';
         break;
 
       case 'cat education.txt':
         output =
-          'M.S. Computer Science – University of Houston (2023–2025)\n' +
-          'B.Tech Computer Science – JNTU Hyderabad (2018–2022)';
+          'M.S. in Computer Science – University of Houston (2023–2025)\n' +
+          'B.Tech in Computer Science – JNTU Hyderabad (2018–2022)';
         break;
 
       case 'open linkedin':
