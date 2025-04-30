@@ -1,37 +1,51 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
+  displayText = '';
+  private words = ['Full Stack Developer', 'Data Engineer', 'Cloud Enthusiast'];
+  private wordIndex = 0;
+  private charIndex = 0;
+  private isDeleting = false;
+  private timer: any;
+
   ngAfterViewInit(): void {
-    const words = ['Full Stack Developer', 'Data Engineer', 'Cloud Enthusiast'];
-    const el = document.querySelector('.typewriter')!;
-    let i = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    this.typeText();
+  }
 
-    const type = () => {
-      const word = words[i % words.length];
-      const speed = isDeleting ? 50 : 100;
+  ngOnDestroy(): void {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  }
 
-      el.textContent = word.substring(0, charIndex);
-      if (!isDeleting && charIndex < word.length) {
-        charIndex++;
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) i++;
-        setTimeout(type, 1000); // pause before typing next
+  private typeText(): void {
+    const currentWord = this.words[this.wordIndex % this.words.length];
+    const typingSpeed = this.isDeleting ? 50 : 100;
+
+    this.displayText = currentWord.substring(0, this.charIndex);
+
+    if (!this.isDeleting && this.charIndex < currentWord.length) {
+      this.charIndex++;
+    } else if (this.isDeleting && this.charIndex > 0) {
+      this.charIndex--;
+    } else {
+      this.isDeleting = !this.isDeleting;
+      if (!this.isDeleting) {
+        this.wordIndex++;
+        this.timer = setTimeout(() => this.typeText(), 1000); // pause before typing next
         return;
       }
-      setTimeout(type, speed);
-    };
+    }
 
-    type();
+    this.timer = setTimeout(() => this.typeText(), typingSpeed);
   }
 }

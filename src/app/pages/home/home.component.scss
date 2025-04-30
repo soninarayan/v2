@@ -2,9 +2,64 @@
 
 .hero-section {
   @include section-wrapper;
+  min-height: 93vh; // Setting the height to 100vh
   padding: 6rem 0;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden; // Contains the animated shapes
+
+  // Animated background
+  .animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(40px);
+  }
+
+  .shape-1 {
+    background: var(--primary-color);
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+    animation: float 15s ease-in-out infinite;
+  }
+
+  .shape-2 {
+    background: var(--accent-color, #61dafb);
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    left: -50px;
+    animation: float 20s ease-in-out infinite reverse;
+  }
+
+  .shape-3 {
+    background: var(--success-color, #28a745);
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 30%;
+    animation: float 18s ease-in-out infinite 2s;
+  }
+
+  // Ensure content is above the shapes
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 
   h1 {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -17,6 +72,18 @@
     font-weight: 500;
     font-size: 1.25rem;
     height: 2rem;
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+  }
+
+  .bio-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 540px;
+    margin-bottom: 1rem;
   }
 
   .hero-img {
@@ -45,6 +112,129 @@
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(10px, 15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(5px, -10px) rotate(10deg);
+  }
+  75% {
+    transform: translate(-10px, 5px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+// Scroll indicator styles
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+
+  .mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--text-color, white);
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 10px;
+
+    .wheel {
+      width: 6px;
+      height: 6px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 2s infinite;
+    }
+  }
+
+  .arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .arrow {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--text-color, white);
+      border-bottom: 2px solid var(--text-color, white);
+      transform: rotate(45deg);
+      margin: -5px;
+      animation: arrow 2s infinite;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+    top: 30px;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+}
+
+// Media query for better responsiveness
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0;
+
+    .sub-heading {
+      justify-content: center;
+      text-align: center;
     }
   }
 }
