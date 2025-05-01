@@ -11,7 +11,12 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   displayText = '';
-  private words = ['Full Stack Developer', 'Data Engineer', 'Cloud Enthusiast'];
+  private words = [
+    'Full Stack Developer',
+    'AI & Computer Vision Engineer',
+    'Cloud Solutions Architect',
+    'Data Engineer',
+  ];
   private wordIndex = 0;
   private charIndex = 0;
   private isDeleting = false;

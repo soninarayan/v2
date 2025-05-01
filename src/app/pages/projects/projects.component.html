@@ -12,6 +12,11 @@
             [class]="getClass(i)"
             (click)="selectProject(i)"
           />
+          <div class="project-pagination d-flex justify-content-center mt-4">
+            <span class="pagination-indicator">
+              {{ selectedProjectIndex + 1 }}/{{ projects.length }}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -24,10 +29,10 @@
           {{ projects[selectedProjectIndex].description }}
         </p>
 
-        <div class="tech-stack mt-2">
+        <div class="tech-stack mt-3">
           <span
             *ngFor="let tech of projects[selectedProjectIndex].techStack"
-            class="badge"
+            class="badge me-2 mb-2"
           >
             {{ tech }}
           </span>
@@ -36,7 +41,7 @@
         <a
           [href]="projects[selectedProjectIndex].github"
           target="_blank"
-          class="btn btn-outline-light mt-3"
+          class="btn btn-outline-light mt-4"
         >
           <i class="bi bi-github me-2"></i> View on GitHub
         </a>
