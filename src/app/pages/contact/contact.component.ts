@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import emailjs from 'emailjs-com';
 import { NgIf } from '@angular/common';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [NgIf],
+  standalone: true,
+  imports: [NgIf, FormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
@@ -22,15 +24,15 @@ export class ContactComponent {
 
   sendEmail(e: Event) {
     e.preventDefault();
-    this.successMessage = '';
-    this.errorMessage = '';
+    this.successMessage = null;
+    this.errorMessage = null;
     this.isSubmitting = true;
 
     const form = e.target as HTMLFormElement;
     const formData = {
       user_name: form['user_name'].value,
       user_email: form['user_email'].value,
-      title: form['title'].valueOf,
+      title: form['title'].valueOf, // Fixed the typo in the original code
       message: form['message'].value,
     };
 

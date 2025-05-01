@@ -8,20 +8,10 @@
 
     <div *ngIf="successMessage" class="custom-alert alert-success" role="alert">
       {{ successMessage }}
-      <button
-        type="button"
-        class="btn-close"
-        (click)="successMessage = null"
-      ></button>
     </div>
 
     <div *ngIf="errorMessage" class="custom-alert alert-danger" role="alert">
-      {{ errorMessage }}
-      <button
-        type="button"
-        class="btn-close"
-        (click)="errorMessage = null"
-      ></button>
+      <i class="fas fa-exclamation-triangle"></i> {{ errorMessage }}
     </div>
 
     <form
@@ -29,50 +19,112 @@
       (submit)="sendEmail($event)"
       data-aos="fade-up"
     >
-      <div class="row gy-3">
+      <div class="row gy-4">
         <div class="col-md-6">
-          <input
-            type="text"
-            name="user_name"
-            class="form-control"
-            placeholder="Your Name"
-            required
-          />
+          <div class="form-floating">
+            <input
+              type="text"
+              name="user_name"
+              id="user_name"
+              class="form-control"
+              placeholder="Your Name"
+              required
+              #nameInput="ngModel"
+              ngModel
+            />
+            <label for="user_name"
+              ><i class="fas fa-user icon-prefix"></i> Your Name</label
+            >
+            <div
+              *ngIf="nameInput.invalid && nameInput.touched"
+              class="form-error"
+            >
+              Please enter your name
+            </div>
+          </div>
         </div>
         <div class="col-md-6">
-          <input
-            type="email"
-            name="user_email"
-            class="form-control"
-            placeholder="Your Email"
-            required
-          />
+          <div class="form-floating">
+            <input
+              type="email"
+              name="user_email"
+              id="user_email"
+              class="form-control"
+              placeholder="Your Email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              #emailInput="ngModel"
+              ngModel
+            />
+            <label for="user_email"
+              ><i class="fas fa-envelope icon-prefix"></i> Your Email</label
+            >
+            <div
+              *ngIf="emailInput.invalid && emailInput.touched"
+              class="form-error"
+            >
+              Please enter a valid email address
+            </div>
+          </div>
         </div>
         <div class="col-12">
-          <input
-            type="text"
-            name="title"
-            class="form-control"
-            placeholder="Subject"
-            required
-          />
+          <div class="form-floating">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="form-control"
+              placeholder="Subject"
+              required
+              #subjectInput="ngModel"
+              ngModel
+            />
+            <label for="title"
+              ><i class="fas fa-heading icon-prefix"></i> Subject</label
+            >
+            <div
+              *ngIf="subjectInput.invalid && subjectInput.touched"
+              class="form-error"
+            >
+              Please enter a subject
+            </div>
+          </div>
         </div>
         <div class="col-12">
-          <textarea
-            name="message"
-            class="form-control"
-            rows="5"
-            placeholder="Your Message"
-            required
-          ></textarea>
+          <div class="message-container">
+            <label for="message" class="message-label">Your Message</label>
+            <textarea
+              name="message"
+              id="message"
+              class="form-control message-area"
+              rows="6"
+              placeholder="Please describe your project, question, or message in detail..."
+              required
+              minlength="10"
+              maxlength="1000"
+              #messageInput="ngModel"
+              ngModel
+            ></textarea>
+            <div
+              *ngIf="messageInput.invalid && messageInput.touched"
+              class="form-error"
+            >
+              <i class="fas fa-exclamation-triangle"></i> Please enter your
+              message
+            </div>
+          </div>
         </div>
         <div class="col-12 text-center">
           <button
             type="submit"
-            class="btn btn-primary mt-3 px-4"
+            class="btn btn-primary send-btn mt-3 px-4"
             [disabled]="isSubmitting"
+            [class.sending]="isSubmitting"
           >
-            {{ isSubmitting ? "Sending..." : "Send Message" }}
+            <span class="btn-text">{{
+              isSubmitting ? "Sending..." : "Send Message"
+            }}</span>
+            <i class="fas fa-paper-plane ms-2"></i>
           </button>
         </div>
       </div>

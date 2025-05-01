@@ -1,21 +1,38 @@
-import { Component, HostListener } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  currentColor = '#4ade80';
+  currentColor = '#ff0000'; // Default red color
   activeSection: string = 'home';
+  isColorPickerOpen = false;
+
+  @ViewChild('colorPickerInput') colorPickerInput!: ElementRef;
+
+  toggleColorPicker() {
+    this.isColorPickerOpen = !this.isColorPickerOpen;
+  }
+
+  openColorPicker() {
+    // Directly open the native color picker
+    this.colorPickerInput.nativeElement.click();
+  }
 
   updatePrimaryColor(event: Event) {
     const newColor = (event.target as HTMLInputElement).value;
-    this.currentColor = newColor;
-    document.documentElement.style.setProperty('--primary-color', newColor);
-    localStorage.setItem('primaryColor', newColor);
+    this.applyColor(newColor);
+  }
+
+  applyColor(color: string) {
+    this.currentColor = color;
+    document.documentElement.style.setProperty('--primary-color', color);
+    localStorage.setItem('primaryColor', color);
   }
 
   ngOnInit() {
@@ -23,6 +40,30 @@ export class NavbarComponent {
     if (savedColor) {
       this.currentColor = savedColor;
       document.documentElement.style.setProperty('--primary-color', savedColor);
+    }
+
+    // Close color picker when clicking outside
+    document.addEventListener(
+      'click',
+      this.closeColorPickerOnOutsideClick.bind(this)
+    );
+  }
+
+  ngOnDestroy() {
+    document.removeEventListener(
+      'click',
+      this.closeColorPickerOnOutsideClick.bind(this)
+    );
+  }
+
+  closeColorPickerOnOutsideClick(event: MouseEvent) {
+    const themeSwitcher = document.querySelector('.theme-switcher');
+    if (
+      this.isColorPickerOpen &&
+      themeSwitcher &&
+      !themeSwitcher.contains(event.target as Node)
+    ) {
+      this.isColorPickerOpen = false;
     }
   }
 
@@ -43,6 +84,7 @@ export class NavbarComponent {
       this.activeSection = 'contact';
     }
   }
+
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

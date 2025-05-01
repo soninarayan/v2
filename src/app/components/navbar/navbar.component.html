@@ -1,16 +1,5 @@
 <nav class="custom-navbar">
-  <div class="logo" (click)="scrollToTop()">
-    RD
-    <label class="color-picker-wrapper">
-      🎨
-      <input
-        type="color"
-        [value]="currentColor"
-        (change)="updatePrimaryColor($event)"
-        class="color-picker"
-      />
-    </label>
-  </div>
+  <div class="logo" (click)="scrollToTop()">RD</div>
 
   <input type="checkbox" id="menu-toggle" />
   <label for="menu-toggle" class="hamburger">&#9776;</label>
@@ -32,3 +21,24 @@
     </li>
   </ul>
 </nav>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher">
+  <button
+    class="theme-button"
+    (click)="openColorPicker()"
+    aria-label="Change theme color"
+  >
+    <span class="theme-icon">🎨</span>
+  </button>
+
+  <!-- Hidden color input that will be triggered programmatically -->
+  <input
+    #colorPickerInput
+    type="color"
+    [value]="currentColor"
+    (change)="updatePrimaryColor($event)"
+    class="hidden-color-picker"
+    aria-label="Choose custom color"
+  />
+</div>
