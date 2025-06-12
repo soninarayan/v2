@@ -26,7 +26,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
   predefinedCommands = [
     {
       command: 'whoami',
-      output: 'Rohith Reddy Depa, Full Stack & Cloud Engineer',
+      output: 'Narayan Soni, Full Stack & Cloud Engineer',
     },
     {
       command: 'cat skills.txt',
@@ -38,7 +38,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
       output:
         'school-management, isp-messaging-system, txdot-defect-detection, portfolio-site',
     },
-    { command: 'pwd', output: '/home/rohith/portfolio' },
+    { command: 'pwd', output: '/home/Narayan/portfolio' },
     {
       command: 'help',
       output:
@@ -93,7 +93,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
 
     switch (cmd) {
       case 'whoami':
-        output = 'Rohith Reddy Depa, Full Stack & Cloud Engineer';
+        output = 'Narayan Soni, Full Stack & Cloud Engineer';
         break;
 
       case 'motivation':
@@ -123,7 +123,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
           'Built Angular + Spring Boot apps | Redis Caching | PostgreSQL + AWS RDS | CloudWatch monitoring';
         break;
 
-      case 'cat experience/opentext.txt':
+      case 'cat experience/Phoenix Global.txt':
         output =
           'React + Node.js | Redis, Redux, SSR | AWS Glue ETL | Jenkins + Docker + Kubernetes';
         break;
@@ -131,7 +131,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
       case 'cat experience/*.txt':
         output =
           'University of Houston: Angular + Spring Boot, AWS, Redis, PostgreSQL\n' +
-          'OpenText: React + Node.js, Redis Caching, AWS Glue, Jenkins';
+          'Phoenix Global: React + Node.js, Redis Caching, AWS Glue, Jenkins';
         break;
 
       case 'cat projects/school-management.txt':
@@ -174,15 +174,15 @@ export class TerminalComponent implements OnInit, AfterViewInit {
         break;
 
       case 'open linkedin':
-        output = 'Opening https://linkedin.com/in/rohithreddydepa';
+        output = 'Opening https://linkedin.com/in/soninarayan';
         break;
 
       case 'open github':
-        output = 'Opening https://github.com/rohithreddydepa';
+        output = 'Opening https://github.com/soninarayan';
         break;
 
       case 'open portfolio':
-        output = 'Opening https://rohithreddydepa.github.io/latest-portfolio/';
+        output = 'Opening https://soninarayan.github.io/latest-portfolio/';
         break;
 
       case 'date':
@@ -194,7 +194,7 @@ export class TerminalComponent implements OnInit, AfterViewInit {
         break;
 
       case 'pwd':
-        output = '/home/rohith/portfolio';
+        output = '/home/Narayan/portfolio';
         break;
 
       case 'clear':

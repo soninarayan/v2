@@ -28,7 +28,7 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rohithreddydepa/latest-portfolio.git
+git clone https://github.com/soninarayan/latest-portfolio.git
 cd latest-portfolio
 ```
 
